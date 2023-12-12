@@ -1,0 +1,144 @@
+<%- include('header'); -%>
+    <div class="main-container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <div class="bar">
+                <div class="logsign">
+                    <a href="#">LogIn/SignUp</a>
+                </div>
+                <nav>
+                    <input type="checkbox" name="" id="click" onclick="updatemenu()">
+                    <label for="click" class="menu-btn">
+                        <i id="icon1" class="ri-list-check"></i>
+                        <i id="icon2" class="ri-close-line"></i>
+
+                    </label>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about-us">About us</a></li>
+                        <li><a href="#contact-us">Contact Us</a></li>
+                        <li><a href="#upcoming">Login/SignUp</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="home">
+
+            <div class="left-home">
+
+                <p> We know you need <span>funds</span>, we are here to help you</p>
+                <div><a href="#">Start A FREE Fundraiser Now</a></div>
+            </div>
+
+            <div class="right-home">
+                <img src="home-img.png" alt="Fundraiser">
+            </div>
+
+        </div>
+        <div id="about-us">
+            <div class="top-about">
+                <h3>Scroll down to Explore more</h3>
+                <i class="ri-arrow-down-double-fill"></i>
+            </div>
+            <div class="middle-about">
+
+                <div class="left-about">
+                    <img src="about.png" alt="">
+                </div>
+                <div class="right-about">
+                    <h1>Crowdfunding can help you raise funds online</h1>
+                    <p>Crowdfunding leverages the power of social networks and the internet to give people the means to
+                        raise funds for medical and social causes. With crowdfunding, you can receive donations from
+                        friends, family, colleagues, and even strangers</p>
+                </div>
+            </div>
+            <div class="bottom-about">
+                <h4>Start a FREE fundraiser on <span>VidyaShakti</span> to raise money for you or your loved ones</h4>
+                <div><a href="#">Start A FREE Fundraiser Now</a></div>
+            </div>
+            <div class="steps">
+                <div style="text-align: center;">
+                    <h1>How to start a fundraising campaign on VidyaShakti</h1>
+                </div>
+                <div class="steps-card">
+                    <div class="card">
+                        <h1> 1</h1>
+                        <p>Fill a few details who you are fundraising for</p>
+                    </div>
+                    <div class="card">
+                        <h1> 2</h1>
+                        <p>Share your campaign with friends, family via social media.</p>
+                    </div>
+                    <div class="card">
+                        <h1> 3</h1>
+                        <p>receive donation from friends, family and even strange across the world.</p>
+                    </div>
+                    <div class="card">
+                        <h1> 4</h1>
+                        <p>Transfer funds to the eductional institute or to your bank account whenever you need.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact-us">
+
+            <div id="form-container">
+
+                <h2>Request a Call Back</h2>
+                <form action="submit" method="post">
+                    <label for="name">Name:</label>
+                    <input class="input" type="text" id="name" name="name" placeholder="e.g : Ram " required>
+
+                    <label for="age">Age:</label>
+                    <input class="input" type="number" id="age" name="age" placeholder="e.g : 19" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input class="input" type="tel" id="phone" name="phone" placeholder="e.g : +91 89267 63921"
+                        required>
+                    <!-- <small>Format: 1234567890</small> -->
+
+                    <label for="email">Email ID:</label>
+                    <input class="input" type="email" id="email" name="email" required>
+
+                    <input id="button" type="submit" value="Submit">
+                </form>
+
+            </div>
+        </div>
+        <div class="info">
+            <h1>The leader in online fundraising</h1>
+            <div class="info-content">
+                <div class="info-card">
+                    <i class="ri-global-fill"></i>
+                    <div class="content">
+                        <h3>Guidance​</h3>
+                        <p>A dedicated campaign manager to guide you in fundraising</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="ri-line-chart-line"></i>
+                    <div class="content">
+                        <h3>Social reach</h3>
+                        <p>Harness the power of social media to spread your story and get more support.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="ri-git-repository-private-fill"></i>
+                    <div class="content">
+                        <h3>Secure</h3>
+                        <p>Our Trust & Safety team works around the clock to protect against fraud.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="ri-message-3-fill"></i>
+                    <div class="content">
+                        <h3>Expert advice</h3>
+                        <p>Our best-in-class Customer Happiness agents will answer your questions.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <%- include('footer'); -%>
