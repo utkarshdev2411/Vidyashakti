@@ -11,6 +11,10 @@ app.get("/",function(req,res){
    res.render("index");
 
 })
+app.get("/login",function(req,res){
+    res.render("loginpage");
+ 
+ })
 
 app.listen(3000,function(){
     console.log("Server is running on port 3000");
