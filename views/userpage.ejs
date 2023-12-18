@@ -40,14 +40,99 @@
         h2 {
             color: #333;
             margin-bottom: 18px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+
+        a.button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 35px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            font-size: large;
+        }
+
+        a.button:hover {
+            background-color: #45a049;
+        }
+
+
+        
+         
+
+
+     
+
 
         p {
             color: #666;
             margin-bottom: 12px;
         }
 
-        @media (max-width: 480px) {
+/*New Div ---------------------*/
+    
+.active-funds {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px; /* Add margin for separation from the user information */
+    width: 98%;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.active-funds h2 {
+    color: #333;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fund-info {
+    display: flex;
+    flex-direction: column; /* Display items vertically */
+    align-items: flex-start; /* Left align items */
+    margin-bottom: 12px; /* Adjusted margin for better spacing */
+}
+
+.fund-info i {
+    font-size: 24px; /* Adjust the icon size as needed */
+    margin-bottom: 8px; /* Space between icon and text */
+}
+
+.fund-info span {
+    color: #666;
+    margin-bottom: 9px; /* Adjusted margin for better spacing */
+}
+
+.fund-info a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.fund-info a:hover {
+    color: #45a049;
+}
+
+
+
+
+
+
+
+
+        
+
+
+@media (max-width: 480px) {
             .content-container {
                 margin-top: 30%;
                 width: 95%;
@@ -82,17 +167,36 @@
         </div>
     </div>
 
-  
 
-<div class="content-container">
-    <h2>User Information</h2>
-    <p><strong>Name:</strong> <%= foundUser.name %></p>
-    <p><strong>Phone Number:</strong> <%= foundUser.phone %></p>
-    <p><strong>Email:</strong> <%= foundUser.email %></p>
-</div>
+
+    <div class="content-container">
+        <h2>User Information<a href="/fundsform" class="button">Start a Free Fundraiser</a></h2>
+        <p><strong>Name:</strong>
+            <%= foundUser.name %>
+        </p>
+        <p><strong>Phone Number:</strong>
+            <%= foundUser.phone %>
+        </p>
+        <p><strong>Email:</strong>
+            <%= foundUser.email %>
+        </p>
+    </div>
 
 
     <!-- More content can be added here in the future -->
+    <div class="active-funds">
+        <h2>Active Funds</h2>
+
+        <!-- Example Fund Information -->
+        <div class="fund-info">
+            <i class="ri-trophy-line"></i>
+            <span><strong>Program Name:</strong>None </span>
+            <span><strong>Target Amount:</strong> $50,000</span>
+            <a href="/your-link">Link Text</a>
+        </div>
+
+        <!-- Add more fund information as needed -->
+    </div>
 
 </body>
 
