@@ -183,20 +183,49 @@
     </div>
 
 
-    <!-- More content can be added here in the future -->
-    <div class="active-funds">
-        <h2>Active Funds</h2>
-
-        <!-- Example Fund Information -->
-        <div class="fund-info">
-            <i class="ri-trophy-line"></i>
-            <span><strong>Program Name:</strong>None </span>
-            <span><strong>Target Amount:</strong> $50,000</span>
-            <a href="/your-link">Link Text</a>
+  
+        
+       
+        <% if (foundUserData ===null) { %>
+            <div class="active-funds" style="display: none;">
+                <h2>Active Funds</h2>
+        
+            <div class="fund-info">
+                <i class="ri-trophy-line"></i>
+                <span><strong>Program Name:</strong> null</span>
+                <span><strong>Target Amount:</strong> null</span>
+                <span><strong>Age:</strong> null</span>
+                <span><strong>Country:</strong> null </span>
+                <span><strong>Account Details:</strong> null</span>
+                <span><strong>Description:</strong> null </span>
+                <a href="/your-link">Link Text</a>
+            </div>
         </div>
+        <% } else { %>
+            <div class="active-funds">
+                <h2>Active Funds</h2>
+            <div class="fund-info">
+                <i class="ri-trophy-line"></i>
+                <span><strong>Program Name:</strong><%= foundUserData.name !== undefined ? foundUserData.name : 'Default Name' %> </span>
+                <span><strong>Target Amount:</strong><%= foundUserData.goalamount !== undefined ? foundUserData.goalamount : 'Default Amount' %> </span>
+                <span><strong>Age:</strong><%= foundUserData.age !== undefined ? foundUserData.age : 'Default Age' %> </span>
+                <span><strong>Country:</strong><%= foundUserData.Country !== undefined ? foundUserData.Country : 'Default Country' %> </span>
+                <span><strong>Account Details:</strong><%= foundUserData.bankdetails !== undefined ? foundUserData.bankdetails : 'Default Bank Details' %> </span>
+                <span><strong>Description:</strong><%= foundUserData.description !== undefined ? foundUserData.description : 'Default Description' %> </span>
+                <a href="/your-link">Link Text</a>
+            </div>
+        </div>
+        <% } %>
+        
+        
+        
+       
+        
+        
+        
 
         <!-- Add more fund information as needed -->
-    </div>
+    
 
 </body>
 

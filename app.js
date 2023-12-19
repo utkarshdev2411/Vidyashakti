@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
 const User = new mongoose.model("Auth", userSchema);
 
 
-const userSchema2 = new mongoose.Schema({
+const userSchema2= new mongoose.Schema({
     fundname: String,
     name: String,
     email: String,
@@ -34,10 +34,10 @@ const userSchema2 = new mongoose.Schema({
     bankdetails: String,
     Country: String,
     age: String
-
-
 });
 const UserData = new mongoose.model("User", userSchema2);
+
+
 //Get requests
 app.get("/", function (req, res) {
     res.render("index");
@@ -62,30 +62,36 @@ app.get("/fundsform", function (req, res) {
 
 //post request-------------------------------------
 
-
-app.post("/login", function (req, res) {
+app.post("/login", async function (req, res) {
     const username = req.body.username;
     const password = md5(req.body.password);
-    const email = req.body.username;
 
+    try {
+        const foundUser = await User.findOne({ email: username }).exec();
+        const foundUserData = await UserData.findOne({ email: username }).exec();
 
-    User.findOne({ email: username })
-        .then((foundUser) => {
-            if (foundUser && foundUser.password === password) {
-                res.render("userpage", { foundUser: foundUser });
-
-
-
+        if (foundUser && foundUser.password) {
+            if (foundUser.password === password) {
+                if(foundUserData==null){
+                    
+                }
+                res.render("userpage", { foundUser, foundUserData });
+                console.log( foundUserData);
 
             } else {
-                res.status(400).send("Invalid credentials");
+                console.log("Invalid password");
             }
-        })
-        .catch((error) => {
-            console.log(error);
-            res.status(500).send("Invalid email");
-        });
+        } else {
+            console.log("User not found");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).send("Internal Server Error");
+    }
 });
+
+
+   
 
 app.post("/signup", function (req, res) {
     const newUser = new User({
