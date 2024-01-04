@@ -10,22 +10,28 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            /* background-color: #f4f4f4; */
+            background-color: rgba(157, 157, 157, 0.683);
+          
+
             margin: 0;
             padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+           
         }
 
         form {
             background-color: #fff;
 
+
             padding: 20px;
+            padding-top: 30px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 600px;
+            width: 60%;
+            
             /* Increase the max-width for a better layout */
             box-sizing: border-box;
 
@@ -37,6 +43,10 @@
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
+            /* color: #f40776; */
+            color: #d2065c;
+
+
         }
 
         input,
@@ -52,7 +62,7 @@
         }
 
         button {
-            background-color: #4caf50;
+            background-color: #f40776;
             color: #fff;
             padding: 12px;
             border: none;
@@ -64,17 +74,40 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #d2065c;
+                       
+
+        }
+        .watermark-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* z-index: -1; */
+            opacity: 0.1;
+            pointer-events: none; /* Make the watermark non-interactive */
+
+        }
+
+        .watermark {
+            background: url('logo.png')no-repeat center center fixed;
+            background-size: 50%;
+            width: 100%;
+            height: 100%;
         }
     </style>
 
 </head>
 
 <body>
+    <div class="watermark-container">
+        <div class="watermark"></div>
+    </div>
 
 
     <form action="/fundsform" method="post">
-        <label for="fundraiserName">Fundraiser Name:</label>
+        <label for="fundraiserName">Fundraising Cause:</label>
         <input type="text" id="fundraiserName" name="fundraiserName" required>
 
         <label for="organizerName">Your Name:</label>
