@@ -47,31 +47,22 @@
         }
 
         a.button {
-            background-color: #4CAF50;
+            background-color: #f40776;
             color: white;
             padding: 10px 15px;
             border: none;
             border-radius: 35px;
             text-decoration: none;
             cursor: pointer;
-            transition: background-color 0.3s ease-in-out;
+            transition: background-color 0.1s ease-in-out;
             font-size: large;
         }
 
         a.button:hover {
-            background-color: #45a049;
+            background-color: #d2065c;
         }
-
-
-        
-         
-
-
-     
-
-
         p {
-            color: #666;
+            color: rgb(25, 25, 25);
             margin-bottom: 12px;
         }
 
@@ -88,8 +79,7 @@
 }
 
 .active-funds h2 {
-    color: #333;
-    margin-bottom: 18px;
+    color: rgb(25, 25, 25);    margin-bottom: 18px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -108,18 +98,24 @@
 }
 
 .fund-info span {
-    color: #666;
-    margin-bottom: 9px; /* Adjusted margin for better spacing */
+    color: rgb(25, 25, 25);    margin-bottom: 9px; /* Adjusted margin for better spacing */
 }
 
 .fund-info a {
-    color: #4CAF50;
+    color: #f40776;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
 
 .fund-info a:hover {
-    color: #45a049;
+    color: #d2065c;
+}
+.heading{
+    
+    color: #f40776;
+}
+.title{
+    color: #d2065c;
 }
 
 
@@ -171,13 +167,13 @@
 
     <div class="content-container">
         <h2>User Information<a href="/fundsform" class="button">Start a Free Fundraiser</a></h2>
-        <p><strong>Name:</strong>
+        <p><strong class="heading">Name:</strong>
             <%= foundUser.name %>
         </p>
-        <p><strong>Phone Number:</strong>
+        <p><strong class="heading">Phone Number:</strong>
             <%= foundUser.phone %>
         </p>
-        <p><strong>Email:</strong>
+        <p><strong class="heading">Email:</strong>
             <%= foundUser.email %>
         </p>
     </div>
@@ -188,31 +184,31 @@
        
         <% if (foundUserData ===null) { %>
             <div class="active-funds" style="display: none;">
-                <h2>Active Funds</h2>
+                <h2 class="title">Active Funds</h2>
         
             <div class="fund-info">
                 <i class="ri-trophy-line"></i>
-                <span><strong>Program Name:</strong> null</span>
-                <span><strong>Target Amount:</strong> null</span>
-                <span><strong>Age:</strong> null</span>
-                <span><strong>Country:</strong> null </span>
-                <span><strong>Account Details:</strong> null</span>
-                <span><strong>Description:</strong> null </span>
+                <span><strong class="heading">Program Name:</strong> null</span>
+                <span><strong  class="heading">Target Amount:</strong> null</span>
+                <span><strong class="heading">Age:</strong> null</span>
+                <span><strong class="heading">Country:</strong> null </span>
+                <span><strong class="heading">Account Details:</strong> null</span>
+                <span><strong class="heading">Description:</strong> null </span>
                 <a href="/your-link">Link Text</a>
             </div>
         </div>
         <% } else { %>
             <div class="active-funds">
-                <h2>Active Funds</h2>
+                <h2 >Active Funds</h2>
             <div class="fund-info">
                 <i class="ri-trophy-line"></i>
-                <span><strong>Program Name:</strong><%= foundUserData.name !== undefined ? foundUserData.name : 'Default Name' %> </span>
-                <span><strong>Target Amount:</strong><%= foundUserData.goalamount !== undefined ? foundUserData.goalamount : 'Default Amount' %> </span>
-                <span><strong>Age:</strong><%= foundUserData.age !== undefined ? foundUserData.age : 'Default Age' %> </span>
-                <span><strong>Country:</strong><%= foundUserData.Country !== undefined ? foundUserData.Country : 'Default Country' %> </span>
-                <span><strong>Account Details:</strong><%= foundUserData.bankdetails !== undefined ? foundUserData.bankdetails : 'Default Bank Details' %> </span>
-                <span><strong>Description:</strong><%= foundUserData.description !== undefined ? foundUserData.description : 'Default Description' %> </span>
-                <a href="/your-link">Link Text</a>
+                <span><strong  class="heading">Program Name:</strong><%= foundUserData.name !== undefined ? foundUserData.name : 'Default Name' %> </span>
+                <span><strong class="heading">Target Amount:</strong><%= foundUserData.goalamount !== undefined ? foundUserData.goalamount : 'Default Amount' %> </span>
+                <span><strong class="heading">Age:</strong><%= foundUserData.age !== undefined ? foundUserData.age : 'Default Age' %> </span>
+                <span><strong class="heading">Country:</strong><%= foundUserData.Country !== undefined ? foundUserData.Country : 'Default Country' %> </span>
+                <span><strong class="heading">Account Details:</strong><%= foundUserData.bankdetails !== undefined ? foundUserData.bankdetails : 'Default Bank Details' %> </span>
+                <span><strong class="heading">Description:</strong><%= foundUserData.description !== undefined ? foundUserData.description : 'Default Description' %> </span>
+                <span style="display: flex;"><h4 style="color: #f40776;padding-top: 5%;">Share</h4><a href="/your-link"><img style="width: 45%;padding:  0px;" src="link.png" alt="not loading"></a></span>
             </div>
         </div>
         <% } %>

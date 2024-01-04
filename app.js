@@ -10,6 +10,10 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+//Payment related task_____________________________________
+// const paymentRoute = require('./routes/paymentRoute');
+
+// app.use('/',paymentRoute);
 
 //connecting mongoDB server-----------------------------------
 const uri = "mongodb+srv://utkarshdev2411:Mini%40123456@miniprojectcluster.tyllvaw.mongodb.net/VidyaShakti";
