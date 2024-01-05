@@ -3,17 +3,20 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const md5 = require("md5");
+// const paymentRoute = require('./routes/paymentRoutes');
+
+// require("dotenv").config();
+
 
 
 //app related tasks------------------------------------------
 const app = express();
+
+
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-//Payment related task_____________________________________
-// const paymentRoute = require('./routes/paymentRoute');
 
-// app.use('/',paymentRoute);
 
 //connecting mongoDB server-----------------------------------
 const uri = "mongodb+srv://utkarshdev2411:Mini%40123456@miniprojectcluster.tyllvaw.mongodb.net/VidyaShakti";
@@ -150,6 +153,22 @@ app.post("/fundsform", function (req, res) {
 
         });
 });
+
+//PAYMENT gateway -------------------------------------
+// var http = require('http').Server(app);
+// app.get("/paymentfund", function (req, res) {
+//     res.render("buy");
+// })
+
+// app.use('/paymentfund',paymentRoute);
+// http.listen(4000, function(){
+//     console.log('Payment Server is running on port 4000');
+// });
+
+
+
+
+// 
 
 
 //Listen portion--------------------------------------
