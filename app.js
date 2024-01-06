@@ -3,9 +3,16 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const md5 = require("md5");
-// const paymentRoute = require('./routes/paymentRoutes');
+require("dotenv").config();
 
-// require("dotenv").config();
+
+
+const paymentRoute = require('./routes/paymentRoute');
+
+
+
+
+
 
 
 
@@ -154,21 +161,15 @@ app.post("/fundsform", function (req, res) {
         });
 });
 
-//PAYMENT gateway -------------------------------------
-// var http = require('http').Server(app);
-// app.get("/paymentfund", function (req, res) {
-//     res.render("buy");
-// })
 
-// app.use('/paymentfund',paymentRoute);
-// http.listen(4000, function(){
-//     console.log('Payment Server is running on port 4000');
-// });
+//PAYMENT PART
+app.use('/hello',paymentRoute);
 
 
 
 
-// 
+
+
 
 
 //Listen portion--------------------------------------

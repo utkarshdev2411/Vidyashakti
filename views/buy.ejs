@@ -1,2 +1,23 @@
+<!DOCTYPE html>
+<html>
+<title>Stripe Payment Demo  <%= amount %></title>
+<body>
+	<h3>Thanks for contributing <%= amount %></h3>
+	<form action="payment" method="POST">
+    <input type="hidden" name="amount" value="">
+    <input type="hidden" name="productName" value="Shocks">
+	<script
+		src="//checkout.stripe.com/v2/checkout.js"
+		class="stripe-button"
+		data-key=""
+		data-amount=""
+		data-currency="inr"
+		data-name="Shirt"
+		data-description="Cotton Shirt Products"
+		data-locale="auto" >
+		</script>
+	</form>
+</body>
+</html>
 
 
