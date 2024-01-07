@@ -4,16 +4,18 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const md5 = require("md5");
 
+const path = require('path')
+var Publishable_Key = 'pk_test_51OMfamSCGHCv8QAww7TwB4YdLzGfAqJnLAdZXgAIPetTzSKCD7yghimTzPqMvmOKIfAVeqKniDH0cKwE7X3fb3ZP00yhxhVG3B'
+var Secret_Key = 'sk_test_51OMfamSCGHCv8QAwD66SUKVHlvKxSBEt8md9zGmOsHCXN6CK5Ugdcvp3aDLCNmPJPmw7IygZXdxbIaiYKsHH9S1t00oCK4tCqj'
+const stripe = require('stripe')(Secret_Key)
+
 
 //app related tasks------------------------------------------
 const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-//Payment related task_____________________________________
-// const paymentRoute = require('./routes/paymentRoute');
 
-// app.use('/',paymentRoute);
 
 //connecting mongoDB server-----------------------------------
 const uri = "mongodb+srv://utkarshdev2411:Mini%40123456@miniprojectcluster.tyllvaw.mongodb.net/VidyaShakti";
@@ -29,7 +31,7 @@ const userSchema = new mongoose.Schema({
 const User = new mongoose.model("Auth", userSchema);
 
 
-const userSchema2= new mongoose.Schema({
+const userSchema2 = new mongoose.Schema({
     fundname: String,
     name: String,
     email: String,
@@ -76,11 +78,11 @@ app.post("/login", async function (req, res) {
 
         if (foundUser && foundUser.password) {
             if (foundUser.password === password) {
-                if(foundUserData==null){
-                    
+                if (foundUserData == null) {
+
                 }
                 res.render("userpage", { foundUser, foundUserData });
-                console.log( foundUserData);
+                console.log(foundUserData);
 
             } else {
                 console.log("Invalid password");
@@ -95,7 +97,7 @@ app.post("/login", async function (req, res) {
 });
 
 
-   
+
 
 app.post("/signup", function (req, res) {
     const newUser = new User({
@@ -150,6 +152,54 @@ app.post("/fundsform", function (req, res) {
 
         });
 });
+
+
+app.get('/funding', function (req, res) {
+
+    const userDataString = req.query.userData;
+
+    const foundUserData = userDataString ? JSON.parse(decodeURIComponent(userDataString)) : null;
+    console.log('foundUserData:', foundUserData);
+
+
+    res.render('Home', {
+        key: Publishable_Key, 
+        foundUserData: foundUserData
+
+
+
+    })
+})
+
+app.post('/payment', function (req, res) {
+
+
+
+    stripe.customers.create({
+        email: req.body.stripeEmail,
+        source: req.body.stripeToken,
+        name: 'VidyaShakti',
+        address: {
+            line1: 'TC 9/4 Old MES colony',
+            postal_code: '273001',
+            city: 'Indore',
+            state: 'Utkarsh Pradesh',
+            country: 'India',
+        }
+    })
+        .then((customers) => {
+
+           
+        })
+        .then((charge) => {
+            res.render("success")
+        })
+        .catch((err) => {
+            res.send(err)
+        });
+})
+
+
 
 
 //Listen portion--------------------------------------

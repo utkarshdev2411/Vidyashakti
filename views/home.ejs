@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<title>VidyaShakti</title>
+<head>
+	<style>
+		body {
+		  font-family: Arial, Helvetica, sans-serif;
+		  background-color: #f5f5f5; 
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  height: 100vh;
+		}
+	
+		.container {
+		  text-align: center;
+		  background-color: #ffffff;
+		  padding: 20px;
+
+		  border-radius: 10px;
+		  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		  width: 80%;
+		  height: 75%;
+		}
+	
+		.logo {
+		  margin-bottom: 20px;
+		  width: 20%;
+		}
+	
+		h2 {
+		  color: #333333;
+		}
+	
+		h3 {
+		  color: #555555;
+		}
+		h1{
+			font-family:cursive;
+			color: #f40776;
+		}
+
+	
+		strong {
+		  color: #ff3366; 
+		}
+	  </style>
+	</head>
+
+<body> 
+	
+
+
+
+	
+
+        
+        
+        
+
+		<div class="container">
+			<img class="logo" src="logo.png"  width="100">
+			
+			<h1>We will make sure <%= foundUserData.name %> is helped from this!</h1>
+			<h3>Reach them out at: <%= foundUserData.email %></h3>
+			<h3><strong>Description:</strong> <%= foundUserData.description %></h3>
+			<h3><strong>Goal:</strong> <%= foundUserData.goalamount %></h3>
+			<h3><strong>Country:</strong> <%= foundUserData.Country %></h3>
+
+
+			<form action="payment" method="POST">
+				<script src="//checkout.stripe.com/v3/checkout.js" class="stripe-button" data-key="<%= key %>"
+				data-amount="20000" data-currency="inr" data-name="VidyaShakti"
+				data-description="Your contribution matters ❤️" data-locale="auto" id="customAmountButton"
+				onclick="displayEnteredAmount()">
+				</script>
+	
+			 </form>
+		
+		  </div>
+
+
+
+	
+</body>
+
+</html>
