@@ -73,9 +73,9 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin-top: 20px; 
+    margin-top: 20px; /* Add margin for separation from the user information */
     width: 98%;
-    box-sizing: border-box; 
+    box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
 .active-funds h2 {
@@ -87,18 +87,18 @@
 
 .fund-info {
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
-    margin-bottom: 12px; 
+    flex-direction: column; /* Display items vertically */
+    align-items: flex-start; /* Left align items */
+    margin-bottom: 12px; /* Adjusted margin for better spacing */
 }
 
 .fund-info i {
-    font-size: 24px; 
-    margin-bottom: 8px; 
+    font-size: 24px; /* Adjust the icon size as needed */
+    margin-bottom: 8px; /* Space between icon and text */
 }
 
 .fund-info span {
-    color: rgb(25, 25, 25);    margin-bottom: 9px; 
+    color: rgb(25, 25, 25);    margin-bottom: 9px; /* Adjusted margin for better spacing */
 }
 
 .fund-info a {
@@ -163,56 +163,7 @@
         </div>
     </div>
 
-
-
-    <div class="content-container">
-        <h2>User Information<a href="/fundsform" class="button">Start a Free Fundraiser</a></h2>
-        <p><strong class="heading">Name:</strong>
-            <%= foundUser.name %>
-        </p>
-        <p><strong class="heading">Phone Number:</strong>
-            <%= foundUser.phone %>
-        </p>
-        <p><strong class="heading">Email:</strong>
-            <%= foundUser.email %>
-        </p>
-    </div>
-
-
-  
-        
-       
-        <% if (foundUserData ===null) { %>
-            <div class="active-funds" style="display: none;">
-                <h2 class="title">Active Funds</h2>
-        
-            <div class="fund-info">
-                <i class="ri-trophy-line"></i>
-                <span><strong class="heading">Program Name:</strong> null</span>
-                <span><strong  class="heading">Target Amount:</strong> null</span>
-                <span><strong class="heading">Age:</strong> null</span>
-                <span><strong class="heading">Country:</strong> null </span>
-                <span><strong class="heading">Account Details:</strong> null</span>
-                <span><strong class="heading">Description:</strong> null </span>
-                <a href="/your-link">Link Text</a>
-            </div>
-        </div>
-        <% } else { %>
-            <div class="active-funds">
-                <h2 >Active Funds</h2>
-            <div class="fund-info">
-                <i class="ri-trophy-line"></i>
-                <span><strong  class="heading">Program Name:</strong><%= foundUserData.name !== undefined ? foundUserData.name : 'Default Name' %> </span>
-                <span><strong class="heading">Target Amount:</strong><%= foundUserData.goalamount !== undefined ? foundUserData.goalamount : 'Default Amount' %> </span>
-                <span><strong class="heading">Age:</strong><%= foundUserData.age !== undefined ? foundUserData.age : 'Default Age' %> </span>
-                <span><strong class="heading">Country:</strong><%= foundUserData.Country !== undefined ? foundUserData.Country : 'Default Country' %> </span>
-                <span><strong class="heading">Account Details:</strong><%= foundUserData.bankdetails !== undefined ? foundUserData.bankdetails : 'Default Bank Details' %> </span>
-                <span><strong class="heading">Description:</strong><%= foundUserData.description !== undefined ? foundUserData.description : 'Default Description' %> </span>
-                <span style="display: flex;"><h4 style="color: #f40776;padding-top: 5%;">Share</h4><a href=" /funding?userData=<%= encodeURIComponent(JSON.stringify(foundUserData)) %>"><img style="width: 45%;padding:  0px;" src="link.png" alt="not loading"></a></span>
-            </div>
-        </div>
-        <% } %>
-        
+    
 </body>
 
 </html>
