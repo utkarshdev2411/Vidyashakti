@@ -145,8 +145,11 @@ i {
 .left-home p {
     color: var(--textcol);
     width: 100%;
-    font-weight: lighter;
-    font-size: 3.3vmax;
+    font-weight: 400 ;
+   font-stretch:expanded;
+  
+    font-size: 4.5vmax;
+    font-family:cursive;
     margin-left: 60px;
 }
 
@@ -159,15 +162,17 @@ i {
     text-align: center;
     background-color: var(--pricol);
     padding: 8px;
-    width: 250px;
+    width: 320px;
+    height: 42px;
     margin-left: 60px;
-    border-radius: 20px;
+    border-radius: 40px;
     box-shadow: 0 1px 5px;
 }
 
 .left-home div a {
+    
     color: #fff;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .left-home div:hover,
@@ -216,7 +221,7 @@ i {
 .top-about,
 .top-about i {
     color: var(--navicol);
-    margin-top: 8vh;
+    margin-top: 14vh;
     text-align: center;
 }
 
@@ -233,7 +238,7 @@ i {
 
 
 .left-about img {
-    height: 320px;
+    height: 350px;
     z-index: 2;
 
 }
@@ -249,10 +254,14 @@ i {
 .right-about h1 {
     letter-spacing: 0.5px;
     color: var(--textcol);
+    font-size: 45px;
+    font-stretch: extra-expanded;
 }
 
 .right-about p {
     color: var(--textcol);
+    font-size:  large;
+    line-height: 32px;
 }
 
 .bottom-about {
@@ -262,10 +271,13 @@ i {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-size: x-large;
+ 
 }
 
 .bottom-about span {
     color: var(--pricol);
+    
 
 }
 
@@ -292,7 +304,7 @@ i {
 }
 
 .steps {
-    margin-top: 4vh;
+    margin-top: 6vh;
     margin-bottom: 3vh;
     width: 100%;
     background-color: #ece8e6;
@@ -305,6 +317,8 @@ i {
     font-size: 1.4rem;
     margin: 20px 0;
     box-sizing: border-box;
+    
+   
 }
 
 .steps-card {
@@ -312,6 +326,7 @@ i {
    display: flex;
    justify-content: center;
    align-items: center;
+   
    flex-wrap: wrap;
    gap: 20px;
 }
@@ -319,7 +334,8 @@ i {
 .card {
     text-align: center;
     padding: 10px;
-    border: 2px solid #dadada;
+   
+    border: 3px solid #dadada;
     display: flex;
     height: 180px;
     width: 250px;
@@ -327,18 +343,22 @@ i {
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    
 }
 
 .card h1 {
     position:absolute;
     top: -30px;
-    right: 0px;
-    color: #9b3e584f;
+    right: 40%;
+    color: #9b3e58ac;
     font-size: 75px;
+    padding-top: 10px;
+   
 }  
 .card p{
     position: absolute;
     top: 12vh;
+    line-height: 22px;
 }
 
 
