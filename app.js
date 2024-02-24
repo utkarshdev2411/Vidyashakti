@@ -162,7 +162,7 @@ app.get('/funding', function (req, res) {
     console.log('foundUserData:', foundUserData);
 
 
-    res.render('Home', {
+    res.render('home', {
         key: Publishable_Key, 
         foundUserData: foundUserData
 
