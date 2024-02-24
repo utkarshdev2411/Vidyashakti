@@ -203,6 +203,7 @@ app.post('/payment', function (req, res) {
 
 
 //Listen portion--------------------------------------
-app.listen(3000, function () {
+const port=3000 || process.env.PORT
+app.listen(port, function () {
     console.log("Server is running on port 3000");
 });
