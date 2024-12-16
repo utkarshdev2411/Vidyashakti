@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const md5 = require("md5");
 
 const path = require('path')
-var Publishable_Key = 'pk_test_51OMfamSCGHCv8QAww7TwB4YdLzGfAqJnLAdZXgAIPetTzSKCD7yghimTzPqMvmOKIfAVeqKniDH0cKwE7X3fb3ZP00yhxhVG3B'
+var Publishable_Key = 'pk_test_51OMfamSCGHCv8QAww7TwB4YdLzGfAqJnLAdZXgAIPetTzSKCD7yghimTzPqMvmOKIfAVeqKniDH0cKwE7X3fb3ZP00yhxhVG3B' 
 var Secret_Key = 'sk_test_51OMfamSCGHCv8QAwD66SUKVHlvKxSBEt8md9zGmOsHCXN6CK5Ugdcvp3aDLCNmPJPmw7IygZXdxbIaiYKsHH9S1t00oCK4tCqj'
 const stripe = require('stripe')(Secret_Key)
 
@@ -18,7 +18,7 @@ app.use(express.static("public"));
 
 
 //connecting mongoDB server-----------------------------------
-const uri = "mongodb+srv://utkarshdev2411:Mini%40123456@miniprojectcluster.tyllvaw.mongodb.net/VidyaShakti";
+const uri = "mongodb+srv://utkarshdev2411:ko3MBv0MihbmUF6T@cluster0.5igaf.mongodb.net/";
 mongoose.connect(uri);
 
 
@@ -162,7 +162,7 @@ app.get('/funding', function (req, res) {
     console.log('foundUserData:', foundUserData);
 
 
-    res.render('Home', {
+    res.render('home', {
         key: Publishable_Key, 
         foundUserData: foundUserData
 
